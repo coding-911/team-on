@@ -38,7 +38,7 @@ TeamOn은 현대적인 팀 협업 플랫폼입니다. 업무 관리, 회의 관�
 ### 빠른 시작
 ```bash
 # 저장소 클론
-git clone https://github.com/your-org/teamon.git
+git clone https://github.com/coding-911/team-on.git
 cd teamon
 
 # 환경 변수 설정
