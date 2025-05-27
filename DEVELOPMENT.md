@@ -13,7 +13,7 @@
 
 ### 1. 저장소 클론
 ```bash
-git clone https://github.com/your-org/teamon.git
+git clone https://github.com/coding-911/team-on.git
 cd teamon
 ```
 
