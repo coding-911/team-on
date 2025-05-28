@@ -19,6 +19,26 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual Environment
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
 
 # Node
 node_modules/
@@ -36,25 +56,44 @@ yarn-error.log
 .vscode/
 *.swp
 *.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.pydevproject
+.settings/
+.classpath
 
 # OS
 .DS_Store
 Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~.nib
+Desktop.ini
+$RECYCLE.BIN/
 
 # Logs
 logs/
 *.log
+log/
+tmp/
 
 # Coverage
 .coverage
 coverage/
+.coveragerc
 
 # Docker
 .docker/
+*.env
+docker-compose.override.yml
 
 # Build
 */build/
 */dist/
+.webpack/
+.next/
 
 # Mobile
 *.keystore
@@ -67,15 +106,39 @@ GoogleService-Info.plist
 data/
 media/
 static/
-uploads/ 
+uploads/
+temp/ 
+.temp/
 
-# 환경 변수 파일
-.env
-.env.*
-!.env.example
+# Database
+*.sqlite3
+*.db
+*.sql
 
-# 예외: 예제 파일은 포함
-!.env.example
+# Documentation
+docs/_build/
+site/
+
+# Backup files
+*.bak
+*.backup
+*~
 
 # csv 파일
 *.csv
+*.tsv
+*.xls
+*.xlsx
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
