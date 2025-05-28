@@ -1,0 +1,42 @@
+# FastAPI 및 관련 패키지
+fastapi==0.109.2
+pydantic==2.6.1
+uvicorn==0.27.1
+python-multipart==0.0.9
+email-validator==2.1.0.post1
+
+# 데이터베이스
+sqlalchemy==2.0.25
+alembic==1.13.1
+psycopg2-binary==2.9.9  # PostgreSQL 드라이버
+
+# 캐싱/세션
+redis==5.0.1
+aioredis==2.0.1
+
+# 보안
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# 검색 엔진
+elasticsearch==8.11.1
+elasticsearch-dsl==8.11.0
+
+# 모니터링
+sentry-sdk==1.40.4
+prometheus-client==0.19.0
+
+# 테스트
+pytest==8.0.0
+pytest-cov==4.1.0
+pytest-asyncio==0.23.5
+httpx==0.26.0
+
+# 유틸리티
+python-dotenv==1.0.1
+PyYAML==6.0.1
+python-dateutil==2.8.2
+pytz==2024.1
+
+# 로깅
+structlog==24.1.0 

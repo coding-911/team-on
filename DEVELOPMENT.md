@@ -1,10 +1,9 @@
-
 # TeamOn 개발 환경 설정 가이드
 
 ## 필수 요구사항
 
 - Docker & Docker Compose
-- Python 3.9+
+- Python 3.10+
 - Node.js 16+
 - Poetry (Python 패키지 관리자)
 - Git
@@ -17,7 +16,38 @@ git clone https://github.com/coding-911/team-on.git
 cd teamon
 ```
 
-### 2. 환경 변수 설정
+### 2. Python 가상환경 설정
+
+#### Linux/macOS
+```bash
+# 가상환경 생성
+python3 -m venv venv
+
+# 가상환경 활성화
+source venv/bin/activate
+```
+
+#### Windows
+```bash
+# 가상환경 생성
+python -m venv venv
+
+# 가상환경 활성화
+.\venv\Scripts\activate
+```
+
+### 3. 패키지 의존성 설치
+
+```bash
+# pip 업그레이드
+pip install --upgrade pip
+
+# 패키지 설치
+cd backend
+pip install -r requirements.txt
+```
+
+### 4. 환경 변수 설정
 
 `.env` 파일은 민감한 정보를 포함하므로 Git에 커밋하지 않습니다.  
 환경별 예제 파일을 사용하여 다음과 같이 생성하세요:
@@ -39,7 +69,7 @@ ELASTICSEARCH_URL=http://elasticsearch:9200
 
 #### 테스트 환경 (`backend/.env.test`) 및 운영 환경 (`backend/.env.prod`)도 동일한 구조로 생성하되 실제 비밀 키는 보안 저장소를 사용합니다.
 
-### 3. .gitignore 설정
+### 5. .gitignore 설정
 
 `.env*` 파일은 반드시 `.gitignore`에 포함합니다:
 ```bash
@@ -47,31 +77,31 @@ ELASTICSEARCH_URL=http://elasticsearch:9200
 .env*
 ```
 
-### 4. 비밀값 보안 가이드
+### 6. 비밀값 보안 가이드
 
 - 운영 환경: AWS Secrets Manager, HashiCorp Vault 등 사용 권장
 - CI/CD: GitHub Secrets에 등록
 - 로컬 개발: `.env.dev` 사용
 
-### 5. 비밀값 생성 명령어 예시
+### 7. 비밀값 생성 명령어 예시
 ```bash
 openssl rand -hex 32         # JWT 시크릿 키
 openssl rand -base64 32      # DB 비밀번호
 openssl rand -base64 24      # Redis 비밀번호
 ```
 
-### 6. 환경 변수 로딩 스크립트 권한 부여
+### 8. 환경 변수 로딩 스크립트 권한 부여
 ```bash
 chmod +x backend/scripts/load_env.sh
 ```
 
-### 7. 백엔드 설정
+### 9. 백엔드 설정
 ```bash
 cd backend
 poetry install  # 의존성 설치
 ```
 
-### 8. 프론트엔드 설정
+### 10. 프론트엔드 설정
 ```bash
 cd frontend
 npm install  # 의존성 설치
